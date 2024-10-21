@@ -1,0 +1,244 @@
+.root {
+  padding: clamp(50px, 5vw, 100px) 0;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // height: clamp(100px, 150px, 350px);
+    gap: 100px;
+
+    .name {
+      position: relative;
+
+      .loadingPage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+
+        .svgContainer {
+          width: 150%;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          // height: clamp(100px, 5vh, 350px);
+
+          .svg {
+            width: 33%;
+            stroke: white;
+            fill: #fff;
+            stroke-width: 1px;
+            stroke-dasharray: 4500;
+            animation: draw 8s ease;
+          }
+
+          @keyframes draw {
+            0% {
+              fill-opacity: 0;
+              stroke-dashoffset: 4500;
+            }
+
+            100% {
+              stroke-dashoffset: 0;
+              fill-opacity: 1.5;
+            }
+          }
+
+          .middleSvg {
+            position: relative;
+            width: 33%;
+
+            height: 244px;
+
+            .svg_middle {
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              stroke: white;
+              fill: #fff;
+              stroke-width: 1px;
+              stroke-dasharray: 4500;
+              animation: draw 8s ease;
+            }
+
+            .svg2 {
+              stroke: #5065af;
+              fill: #5065af;
+              stroke-width: 1px;
+              stroke-dasharray: 4500;
+              animation: draw 8s ease;
+            }
+
+            @keyframes draw {
+              0% {
+                fill-opacity: 0;
+                stroke-dashoffset: 4500;
+              }
+
+              100% {
+                stroke-dashoffset: 0;
+                fill-opacity: 1.5;
+              }
+            }
+          }
+        }
+      }
+
+      .nameContainer {
+        height: 100%;
+        overflow: hidden;
+        .team {
+          font-family: 'Gilroy-Regular';
+          opacity: 0;
+          font-size: 63px;
+          font-weight: 400;
+          letter-spacing: 88px;
+          margin-right: -88px;
+        }
+      }
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+
+      p {
+        font-family: 'Gilroy-Medium';
+        color: #dbdbdb;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 1.8px;
+        max-width: 878px;
+      }
+
+      button {
+        font-family: 'Gilroy-Medium';
+        position: relative;
+        overflow: hidden;
+        padding: 10px 94px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        background: none;
+        border-radius: 8px;
+        border: 1px solid #fff;
+        transition: 0.5s;
+        z-index: 1;
+
+        a {
+          color: #fff;
+        }
+        &:before {
+          content: '';
+          width: 0;
+          height: 1000%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          background: #fff;
+          transition: 0.8s ease;
+          display: block;
+          z-index: -1;
+        }
+
+        &:hover::before {
+          width: 105%;
+        }
+
+        &:hover {
+          a {
+            color: #111;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .root {
+    .content {
+      .name {
+        .loadingPage {
+          gap: 15px;
+          .svgContainer {
+            width: 100%;
+            // height: 200px;
+          }
+        }
+        .nameContainer {
+          .team {
+            font-size: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .root {
+    .content {
+      .name {
+        .loadingPage {
+          gap: 5px;
+          .svgContainer {
+            width: 80%;
+            height: 190px;
+          }
+        }
+        .nameContainer {
+          .team {
+            font-family: 'Gilroy-Regular';
+            font-size: 36px;
+            font-weight: 400;
+            letter-spacing: 60px;
+            margin-right: -60px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 520px) {
+  .root {
+    .content {
+      .name {
+        .loadingPage {
+          gap: 5px;
+          .svgContainer {
+            width: 100%;
+            height: 170px;
+          }
+          .nameContainer {
+            .team {
+              letter-spacing: 20px;
+              margin-right: -20px;
+            }
+          }
+        }
+      }
+      .title {
+        gap: 20px;
+        p {
+          font-size: 14px;
+        }
+        button {
+          text-align: center;
+          font-size: 14px;
+          width: 80%;
+          padding: 8px 25px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gilroy-Black';
+  src: url('../assets/fonts/gilroy-black.eot');
+  src: url('../assets/fonts/gilroy-black.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/gilroy-black.woff2') format('woff2'),
+    url('../assets/fonts/gilroy-black.woff') format('woff'),
+    url('../assets/fonts/gilroy-black.ttf') format('truetype'),
+    url('../assets/fonts/gilroy-black.svg#gilroy-black') format('svg');
+}
+
+@font-face {
+  font-family: 'Gilroy-Heavy';
+  src: url('../assets/fonts/gilroy-heavy.eot');
+  src: url('../assets/fonts/gilroy-heavy.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/gilroy-heavy.woff2') format('woff2'),
+    url('../assets/fonts/gilroy-heavy.woff') format('woff'),
+    url('../assets/fonts/gilroy-heavy.ttf') format('truetype'),
+    url('../assets/fonts/gilroy-heavy.svg#gilroy-heavy') format('svg');
+}
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: url('../assets/fonts/gilroy-medium.eot');
+  src: url('../assets/fonts/gilroy-medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/gilroy-medium.woff2') format('woff2'),
+    url('../assets/fonts/gilroy-medium.woff') format('woff'),
+    url('../assets/fonts/gilroy-medium.ttf') format('truetype'),
+    url('../assets/fonts/gilroy-medium.svg#gilroy-medium') format('svg');
+}
+
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('../assets/fonts/gilroy-regular.eot');
+  src: url('../assets/fonts/gilroy-regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/gilroy-regular.woff2') format('woff2'),
+    url('../assets/fonts/gilroy-regular.woff') format('woff'),
+    url('../assets/fonts/gilroy-regular.ttf') format('truetype'),
+    url('../assets/fonts/gilroy-regular.svg#gilroy-regular') format('svg');
+}
+
+@font-face {
+  font-family: 'Gilroy-SemiBold';
+  src: url('../assets/fonts/gilroy-semibold.eot');
+  src: url('../assets/fonts/gilroy-semibold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/gilroy-semibold.woff2') format('woff2'),
+    url('../assets/fonts/gilroy-semibold.woff') format('woff'),
+    url('../assets/fonts/gilroy-semibold.ttf') format('truetype'),
+    url('../assets/fonts/gilroy-semibold.svg#gilroy-semibold') format('svg');
+}
+
+body {
+  font-family: 'Gilroy-Regular';
+  background: #000;
+  color: #fff;
+}
+
+[class*='__container'] {
+  max-width: 90%;
+  margin: 0px auto;
+  padding: 0 50px;
+  position: relative;
+
+  @media (max-width: 760px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 620px) {
+    padding: 0 5px;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  min-width: 100%;
+  background: url('../assets/img/bg.avif') 0 0 / cover no-repeat;
+}
+
+.br {
+  height: 160px;
+}
+
+#menu_button {
+  width: 39px;
+  overflow: hidden;
+}
+
+#menu_checkbox {
+  display: none;
+}
+
+#menu_label {
+  position: relative;
+  display: block;
+  height: 29px;
+  cursor: pointer;
+}
+
+#menu_label:before,
+#menu_label:after,
+#menu_text_bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+}
+
+#menu_label:before,
+#menu_label:after {
+  content: '';
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+}
+
+#menu_label:before {
+  top: 0;
+}
+
+#menu_label:after {
+  top: 12px;
+}
+
+#menu_text_bar {
+  top: 24px;
+}
+
+#menu_text_bar:before {
+  content: 'MENU';
+  position: absolute;
+  top: 5px;
+  right: 0;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#menu_checkbox:checked + #menu_label:before {
+  left: -39px;
+}
+
+#menu_checkbox:checked + #menu_label:after {
+  left: 39px;
+}
+
+#menu_checkbox:checked + #menu_label #menu_text_bar:before {
+  animation: moveUpThenDown 0.8s ease 0.2s forwards,
+    shakeWhileMovingUp 0.8s ease 0.2s forwards,
+    shakeWhileMovingDown 0.2s ease 0.8s forwards;
+}
+
+@keyframes moveUpThenDown {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -27px;
+  }
+  100% {
+    top: -14px;
+  }
+}
+
+@keyframes shakeWhileMovingUp {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes shakeWhileMovingDown {
+  0% {
+    transform: rotateZ(0);
+  }
+  80% {
+    transform: rotateZ(3deg);
+  }
+  90% {
+    transform: rotateZ(-3deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 760px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  margin: 6px 0;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
